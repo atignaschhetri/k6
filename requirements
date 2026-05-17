@@ -1,0 +1,25 @@
+# API Performance Testing using k6 and Grafana
+
+## Objective
+This project is used to perform performance testing for the Purpose of Arrival API and visualize the test results in Grafana.
+
+## Tools
+- k6: Used to run the performance test.
+- Grafana: Used to view the performance test result in charts and dashboards.
+
+## API
+GET /api/v1/dynamic-values-setup/fetch-all?key=PurposeOfArrival
+
+## Test Configuration
+- Virtual Users: 2
+- Duration: 10 seconds
+
+## Thresholds
+- Failed requests should be less than 1%
+- 95% of requests should complete within 3 seconds
+- More than 95% checks should pass
+
+## Run Command
+
+```bash
+k6 cloud run --local-execution k6.cy.js
